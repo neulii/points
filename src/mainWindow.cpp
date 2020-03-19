@@ -1,59 +1,66 @@
 #include "mainWindow.h"
 
-MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
+MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size)
     : wxFrame(NULL, wxID_ANY, title, pos, size)
 {
     wxPanel* panel = new wxPanel(this, wxID_ANY);
 
-    testButton = new wxButton(panel, ID_EXIT, wxT("Quit"), wxPoint(20, 20));
+  /*  testButton = new wxButton(panel, ID_EXIT, wxT("Quit"), wxPoint(20, 20));
     newButton = new wxButton(panel, ID_NEWBUTTON, wxT("NewButton"), wxPoint(20, 60));
-    inputText = new wxTextCtrl(panel, ID_TEXTINPUT, wxT("super"), wxPoint(100, 100));
+    inputText = new wxTextCtrl(panel, ID_TEXTINPUT, wxT("super"), wxPoint(100, 100));*/
 
 
     wxMenu* menuFile = new wxMenu;
-    menuFile->Append(ID_Hello, "&Hello...\tCtrl-H", "Help string shown in status bar for this menu item");
-    menuFile->AppendSeparator();
-    menuFile->Append(wxID_EXIT);
+  
+    //menuFile->AppendSeparator();
+    menuFile->Append(wxID_EXIT,"Beenden");
+    
     wxMenu* menuHelp = new wxMenu;
-    menuHelp->Append(wxID_ABOUT);
+    menuHelp->Append(wxID_ABOUT,"Info");
+
     wxMenuBar* menuBar = new wxMenuBar;
-    menuBar->Append(menuFile, "&File");
-    menuBar->Append(menuHelp, "&Help");
+    menuBar->Append(menuFile, "&Datei");
+    menuBar->Append(menuHelp, "&Info");
     SetMenuBar(menuBar);
+    
     CreateStatusBar();
     SetStatusText("Welcome to wxWidgets!");
+
+    Centre();
+
 }
-void MyFrame::OnExit(wxCommandEvent& event)
+void MainWindow::OnExit(wxCommandEvent& event)
 {
     Close(true);
 }
-void MyFrame::OnAbout(wxCommandEvent& event)
+void MainWindow::OnAbout(wxCommandEvent& event)
 {
-    wxMessageBox("This is a wxWidgets' Hello world sample", "About Hello World", wxOK | wxICON_EXCLAMATION);
-}
-void MyFrame::OnHello(wxCommandEvent& event)
-{
-    wxLogMessage("Hello world from wxWidgets!");
+    wxMessageBox("Dieses Programm dient zum Zählen von Punkten beim Römön ;)", "...nur zur Info...", wxOK | wxICON_INFORMATION);
 }
 
-void MyFrame::QuitButton(wxCommandEvent& event)
-{
-    //wxMessageBox(inputText->GetValue(), "This is what you writed in box", wxOK | wxICON_EXCLAMATION);
-    SetStatusText("super");
+//void MainWindow::OnHello(wxCommandEvent& event)
+//{
+//    wxLogMessage("Hello world from wxWidgets!");
+//}
 
-    std::cout << "das ist nur ein kleiner test" << std::endl;
-    //noch ein test
-    std::cout << "super" << std::endl;
+//void MainWindow::QuitButton(wxCommandEvent& event)
+//{
+//    //wxMessageBox(inputText->GetValue(), "This is what you writed in box", wxOK | wxICON_EXCLAMATION);
+//    SetStatusText("super");
+//
+//    std::cout << "das ist nur ein kleiner test" << std::endl;
+//    //noch ein test
+//    std::cout << "super" << std::endl;
+//
+//
+//
+//}
 
-
-
-}
-
-wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
-    EVT_MENU(ID_Hello, MyFrame::OnHello)
-    EVT_MENU(wxID_EXIT, MyFrame::OnExit)
-    EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
-    EVT_BUTTON(ID_NEWBUTTON, MyFrame::QuitButton)
-    EVT_BUTTON(ID_EXIT, MyFrame::OnExit)
+wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
+ 
+    EVT_MENU(wxID_EXIT, MainWindow::OnExit)
+    EVT_MENU(wxID_ABOUT, MainWindow::OnAbout)
+  /*  EVT_BUTTON(ID_NEWBUTTON, MainWindow::QuitButton)
+    EVT_BUTTON(ID_EXIT, MainWindow::OnExit)*/
 wxEND_EVENT_TABLE()
 

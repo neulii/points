@@ -3,29 +3,30 @@
 #include <wx/wx.h>
 #endif
 
-class MyFrame : public wxFrame
+class MainWindow : public wxFrame
 {
 public:
-    MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size);
+    MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size);
 private:
 
-    wxButton* testButton;
+   /* wxButton* testButton;
     wxButton* newButton;
-    wxTextCtrl* inputText;
+    wxTextCtrl* inputText;*/
 
-    void OnHello(wxCommandEvent& event);
+    //void OnHello(wxCommandEvent& event);
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
-    void QuitButton(wxCommandEvent& event);
+    //void QuitButton(wxCommandEvent& event);
 
     wxDECLARE_EVENT_TABLE();
 };
 
 enum
 {
-    ID_Hello = 1,
-    ID_NEWBUTTON = 2,
-    ID_TEXTINPUT = 3,
-    ID_EXIT
+    /*ID_Hello = 1,
+    ID_SUPER = 2,*/
+  /*  ID_NEWBUTTON = 2,
+    ID_TEXTINPUT = 3,*/
+    //ID_EXIT
 };
 
