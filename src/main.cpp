@@ -95,6 +95,13 @@ void MyFrame::OnHello(wxCommandEvent& event)
 
 void MyFrame::QuitButton(wxCommandEvent& event)
 {
-    wxMessageBox(inputText->GetValue(), "This is what you writed in box", wxOK | wxICON_EXCLAMATION);
-
+    //wxMessageBox(inputText->GetValue(), "This is what you writed in box", wxOK | wxICON_EXCLAMATION);
+    SetStatusText("super");
+    
+    std::cout << "das ist nur ein kleiner test" << std::endl;
+    //noch ein test
+    std::cout << "super" << std::endl;
+    
+    
+    
 }
