@@ -17,7 +17,7 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     menuFile->Append(ID_OpenGame, "Öffnen", "Öffnet ein Spiel");
 
 
-    //menuFile->AppendSeparator();
+    menuFile->AppendSeparator();
     menuFile->Append(ID_Exit,"Beenden", "Beendet das Programm");
     
     wxMenu* menuHelp = new wxMenu;
@@ -29,7 +29,7 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     SetMenuBar(menuBar);
     
     CreateStatusBar();
-    //SetStatusText("Welcome to wxWidgets!");
+    SetStatusText("No do schaust ;)");
 
     Centre();
 
@@ -43,28 +43,26 @@ void MainWindow::OnAbout(wxCommandEvent& event)
     wxMessageBox("Dieses Programm dient zum Zählen von Punkten beim Römön ;)", "...nur zur Info...", wxOK | wxICON_INFORMATION);
 }
 
-//void MainWindow::OnHello(wxCommandEvent& event)
-//{
-//    wxLogMessage("Hello world from wxWidgets!");
-//}
 
-//void MainWindow::QuitButton(wxCommandEvent& event)
-//{
-//    //wxMessageBox(inputText->GetValue(), "This is what you writed in box", wxOK | wxICON_EXCLAMATION);
-//    SetStatusText("super");
-//
-//    std::cout << "das ist nur ein kleiner test" << std::endl;
-//    //noch ein test
-//    std::cout << "super" << std::endl;
-//
-//
-//
-//}
+
+void MainWindow::SaveGame(wxCommandEvent& event)
+{
+
+}
+
+void MainWindow::OpenGame(wxCommandEvent& event)
+{
+
+}
 
 wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
  
     EVT_MENU(ID_Exit, MainWindow::OnExit)
     EVT_MENU(ID_Info, MainWindow::OnAbout)
+    EVT_MENU(ID_SaveGame, MainWindow::SaveGame)
+    EVT_MENU(ID_OpenGame, MainWindow::OpenGame)
+
+
   /*  EVT_BUTTON(ID_NEWBUTTON, MainWindow::QuitButton)
     EVT_BUTTON(ID_EXIT, MainWindow::OnExit)*/
 wxEND_EVENT_TABLE()

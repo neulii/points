@@ -13,15 +13,18 @@ private:
     wxButton* newButton;
     wxTextCtrl* inputText;*/
 
-    //void OnHello(wxCommandEvent& event);
+ 
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
-    //void QuitButton(wxCommandEvent& event);
-
+    void MainWindow::SaveGame(wxCommandEvent& event);
+    void MainWindow::OpenGame(wxCommandEvent& event);
+   
     wxDECLARE_EVENT_TABLE();
 };
 
-enum
+//id's for wxcomponents
+
+enum id
 {
     ID_NewGame = 1,
     ID_SaveGame = 2,
