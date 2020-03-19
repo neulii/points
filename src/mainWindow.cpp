@@ -14,7 +14,7 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
   
     menuFile->Append(ID_NewGame, "Neues Spiel", "Startet ein Neues Spiel");
     menuFile->Append(ID_SaveGame, "Speichern", "Speichert das bestehende Spiel");
-    menuFile->Append(ID_OpenGame, "Öffnen", "Öffnet ein Spiel");
+    menuFile->Append(ID_OpenGame, "Oeffnen", "oeffnet ein Spiel");
 
 
     menuFile->AppendSeparator();
@@ -40,7 +40,7 @@ void MainWindow::OnExit(wxCommandEvent& event)
 }
 void MainWindow::OnAbout(wxCommandEvent& event)
 {
-    wxMessageBox("Dieses Programm dient zum Zählen von Punkten beim Römön ;)", "...nur zur Info...", wxOK | wxICON_INFORMATION);
+    wxMessageBox("Dieses Programm dient zum Zaehlen von Punkten beim Roemoen ;)", "...nur zur Info...", wxOK | wxICON_INFORMATION);
 }
 
 

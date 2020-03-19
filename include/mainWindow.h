@@ -16,8 +16,8 @@ private:
  
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
-    void MainWindow::SaveGame(wxCommandEvent& event);
-    void MainWindow::OpenGame(wxCommandEvent& event);
+    void SaveGame(wxCommandEvent& event);
+    void OpenGame(wxCommandEvent& event);
    
     wxDECLARE_EVENT_TABLE();
 };
