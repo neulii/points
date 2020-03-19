@@ -5,7 +5,7 @@ wxIMPLEMENT_APP(MyApp);
 
 bool MyApp::OnInit()
 {
-    MainWindow* frame = new MainWindow("Hello World", wxPoint(50, 50), wxSize(450, 340));
+    MainWindow* frame = new MainWindow("Points",wxDefaultPosition, wxSize(450, 340));
     frame->Show(true);
     return true;
 }

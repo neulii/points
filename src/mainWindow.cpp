@@ -12,11 +12,16 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
 
     wxMenu* menuFile = new wxMenu;
   
+    menuFile->Append(ID_NewGame, "Neues Spiel", "Startet ein Neues Spiel");
+    menuFile->Append(ID_SaveGame, "Speichern", "Speichert das bestehende Spiel");
+    menuFile->Append(ID_OpenGame, "Öffnen", "Öffnet ein Spiel");
+
+
     //menuFile->AppendSeparator();
-    menuFile->Append(wxID_EXIT,"Beenden");
+    menuFile->Append(ID_Exit,"Beenden", "Beendet das Programm");
     
     wxMenu* menuHelp = new wxMenu;
-    menuHelp->Append(wxID_ABOUT,"Info");
+    menuHelp->Append(ID_Info,"Info", "Blendet das Info Feld ein ;)");
 
     wxMenuBar* menuBar = new wxMenuBar;
     menuBar->Append(menuFile, "&Datei");
@@ -24,7 +29,7 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     SetMenuBar(menuBar);
     
     CreateStatusBar();
-    SetStatusText("Welcome to wxWidgets!");
+    //SetStatusText("Welcome to wxWidgets!");
 
     Centre();
 
@@ -58,8 +63,8 @@ void MainWindow::OnAbout(wxCommandEvent& event)
 
 wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
  
-    EVT_MENU(wxID_EXIT, MainWindow::OnExit)
-    EVT_MENU(wxID_ABOUT, MainWindow::OnAbout)
+    EVT_MENU(ID_Exit, MainWindow::OnExit)
+    EVT_MENU(ID_Info, MainWindow::OnAbout)
   /*  EVT_BUTTON(ID_NEWBUTTON, MainWindow::QuitButton)
     EVT_BUTTON(ID_EXIT, MainWindow::OnExit)*/
 wxEND_EVENT_TABLE()

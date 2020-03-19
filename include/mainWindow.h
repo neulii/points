@@ -23,8 +23,11 @@ private:
 
 enum
 {
-    /*ID_Hello = 1,
-    ID_SUPER = 2,*/
+    ID_NewGame = 1,
+    ID_SaveGame = 2,
+    ID_OpenGame = 3,
+    ID_Exit = 4,
+    ID_Info = 5
   /*  ID_NEWBUTTON = 2,
     ID_TEXTINPUT = 3,*/
     //ID_EXIT
