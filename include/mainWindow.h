@@ -3,11 +3,15 @@
 #include <wx/wx.h>
 #endif
 
+#include "game.h"
+
 class MainWindow : public wxFrame
 {
 public:
     MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size);
 private:
+
+    Game* game;
 
    /* wxButton* testButton;
     wxButton* newButton;
