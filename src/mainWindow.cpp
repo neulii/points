@@ -42,7 +42,9 @@ void MainWindow::OnExit(wxCommandEvent& event)
 void MainWindow::OnAbout(wxCommandEvent& event)
 {
     //wxMessageBox("Dieses Programm dient zum Zaehlen von Punkten beim Roemoen ;)", "...nur zur Info...",  wxYES_NO | wxICON_QUESTION);
-    wxMessageDialog(this, "test","asdf", wxYES_NO | wxICON_QUESTION).ShowModal();
+    wxMessageDialog* dial = new wxMessageDialog(NULL,
+        "Error loading file", "Error", wxOK | wxICON_INFORMATION);
+    dial->ShowModal();
     
 }
 

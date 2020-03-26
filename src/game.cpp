@@ -1,5 +1,10 @@
 #include "game.h"
 
+Game::Game()
+{
+
+}
+
 
 void Game::startNewGame(std::vector<Player*> players)
 {
