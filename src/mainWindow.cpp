@@ -43,7 +43,7 @@ void MainWindow::OnAbout(wxCommandEvent& event)
 {
     //wxMessageBox("Dieses Programm dient zum Zaehlen von Punkten beim Roemoen ;)", "...nur zur Info...",  wxYES_NO | wxICON_QUESTION);
     wxMessageDialog* dial = new wxMessageDialog(NULL,
-        "Error loading file", "Error", wxOK | wxICON_INFORMATION);
+        wxT("Error loading file"), wxT("Error"), wxOK | wxICON_AUTH_NEEDED);
     dial->ShowModal();
     
 }
@@ -60,12 +60,18 @@ void MainWindow::OpenGame(wxCommandEvent& event)
 
 }
 
+void MainWindow::NewGame(wxCommandEvent& event)
+{
+    Player* stefan = new Player("stefan");
+}
+
 wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
  
     EVT_MENU(ID_Exit, MainWindow::OnExit)
     EVT_MENU(ID_Info, MainWindow::OnAbout)
     EVT_MENU(ID_SaveGame, MainWindow::SaveGame)
     EVT_MENU(ID_OpenGame, MainWindow::OpenGame)
+    EVT_MENU(ID_NewGame, MainWindow::NewGame)
 
 
   /*  EVT_BUTTON(ID_NEWBUTTON, MainWindow::QuitButton)

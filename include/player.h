@@ -10,7 +10,7 @@ private:
     
     std::string name;
     int actualPoints;
-    std::vector<int> pointList;
+    std::vector<int> *pointList;
     
 public:
     
