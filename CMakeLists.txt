@@ -4,7 +4,8 @@ SET(PROJ_NAME "myProg")
 PROJECT(${PROJ_NAME})
 
 include_directories(include)
-file(GLOB SOURCES "src/*.cpp")
+file(GLOB SOURCES "src/*.cpp" "include/*.h")
+
 find_package(wxWidgets REQUIRED COMPONENTS net core base)
 include(${wxWidgets_USE_FILE})
 

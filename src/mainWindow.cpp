@@ -1,4 +1,5 @@
 #include "mainWindow.h"
+#include "functions.h"
 
 MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size)
     : wxFrame(NULL, wxID_ANY, title, pos, size)
@@ -40,7 +41,9 @@ void MainWindow::OnExit(wxCommandEvent& event)
 }
 void MainWindow::OnAbout(wxCommandEvent& event)
 {
-    wxMessageBox("Dieses Programm dient zum Zaehlen von Punkten beim Roemoen ;)", "...nur zur Info...", wxOK | wxICON_INFORMATION);
+    //wxMessageBox("Dieses Programm dient zum Zaehlen von Punkten beim Roemoen ;)", "...nur zur Info...",  wxYES_NO | wxICON_QUESTION);
+    wxMessageDialog(this, "test","asdf", wxYES_NO | wxICON_QUESTION).ShowModal();
+    
 }
 
 
