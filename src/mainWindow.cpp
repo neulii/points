@@ -73,13 +73,19 @@ void MainWindow::NewGame(wxCommandEvent& event)
     
 }
 
+void MainWindow::OnClose(wxCloseEvent& event)
+{
+    Destroy();
+
+}
+
 wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
     EVT_MENU(ID_Exit, MainWindow::OnExit)
     EVT_MENU(ID_Info, MainWindow::OnAbout)
     EVT_MENU(ID_SaveGame, MainWindow::SaveGame)
     EVT_MENU(ID_OpenGame, MainWindow::OpenGame)
     EVT_MENU(ID_NewGame, MainWindow::NewGame)
-
+    EVT_CLOSE(MainWindow::OnClose)
 
 
   /*  EVT_BUTTON(ID_NEWBUTTON, MainWindow::QuitButton)

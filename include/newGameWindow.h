@@ -13,7 +13,13 @@ class NewGameWindow :
 public:
 	NewGameWindow(const wxString& title, const wxPoint& pos, const wxSize& size);
 
+	void OnClose(wxCloseEvent& event);
+
 private:
+
+
+
+	wxDECLARE_EVENT_TABLE();
 
 };
 

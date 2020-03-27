@@ -27,7 +27,7 @@ private:
     void SaveGame(wxCommandEvent& event);
     void OpenGame(wxCommandEvent& event);
     void NewGame(wxCommandEvent& event);
-
+    void OnClose(wxCloseEvent& event);
    
     wxDECLARE_EVENT_TABLE();
 };
