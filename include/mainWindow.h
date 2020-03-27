@@ -1,3 +1,6 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
 #include <wx/wxprec.h>
 #ifndef WX_PRECOMP
 #include <wx/wx.h>
@@ -11,7 +14,8 @@ public:
     MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size);
 private:
 
-    Game* game;
+    Game* game = nullptr;
+
 
    /* wxButton* testButton;
     wxButton* newButton;
@@ -42,3 +46,5 @@ enum id
     //ID_EXIT
 };
 
+
+#endif // !MAINWINDOW_H

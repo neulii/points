@@ -8,5 +8,8 @@ Player::Player(std::string name)
 
     pointList = new std::vector<int>();
     std::cout << pointList->size() << std::endl;
-    wxLogDebug("test");
+   
+
+    
+    wxLogDebug(std::to_string(pointList->size()).c_str());
 }

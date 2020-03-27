@@ -1,6 +1,8 @@
 #include "mainWindow.h"
 #include "functions.h"
 
+#include "newGameWindow.h"
+
 MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size)
     : wxFrame(NULL, wxID_ANY, title, pos, size)
 {
@@ -37,7 +39,10 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
 }
 void MainWindow::OnExit(wxCommandEvent& event)
 {
+    
     Close(true);
+   
+    
 }
 void MainWindow::OnAbout(wxCommandEvent& event)
 {
@@ -62,16 +67,19 @@ void MainWindow::OpenGame(wxCommandEvent& event)
 
 void MainWindow::NewGame(wxCommandEvent& event)
 {
-    Player* stefan = new Player("stefan");
+
+    NewGameWindow* newGameWindow = new NewGameWindow("Neues Spiel", wxDefaultPosition, wxSize(300, 200));
+    newGameWindow->ShowModal();
+    
 }
 
 wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
- 
     EVT_MENU(ID_Exit, MainWindow::OnExit)
     EVT_MENU(ID_Info, MainWindow::OnAbout)
     EVT_MENU(ID_SaveGame, MainWindow::SaveGame)
     EVT_MENU(ID_OpenGame, MainWindow::OpenGame)
     EVT_MENU(ID_NewGame, MainWindow::NewGame)
+
 
 
   /*  EVT_BUTTON(ID_NEWBUTTON, MainWindow::QuitButton)
