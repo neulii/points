@@ -14,10 +14,18 @@ public:
 	NewGameWindow(const wxString& title, const wxPoint& pos, const wxSize& size);
 
 	void OnClose(wxCloseEvent& event);
+	void SelectedNumberOfPlayersChoice(wxCommandEvent& event);
+
+	void setGuiPlayers(int playerNumber);
 
 private:
+	int newNumberOfPlayers = 2;
+	
+	wxChoice* numberOfPlayers = nullptr;
+	std::vector<wxStaticText*> playerLabels;
+	std::vector<wxTextCtrl*> nameInputFields;
 
-
+	wxPanel* panelPlayers;
 
 	wxDECLARE_EVENT_TABLE();
 

@@ -11,5 +11,5 @@ Player::Player(std::string name)
    
 
     
-    wxLogDebug(std::to_string(pointList->size()).c_str());
+    //wxLogDebug(std::to_string(pointList->size()).c_str());
 }
