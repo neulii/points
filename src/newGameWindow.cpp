@@ -41,15 +41,20 @@ void NewGameWindow::SelectedNumberOfPlayersChoice(wxCommandEvent& event)
 void NewGameWindow::setGuiPlayers(int playerNumber)
 {
 
+
+
 	panelPlayers= new wxPanel(this, wxID_ANY);
 	panelPlayers->SetSize(this->GetSize());
 
+	InputPanel* ip = new InputPanel(panelPlayers, 1000, wxPoint(200, 200), wxSize(250, 30));
+	InputPanel* i2 = new InputPanel(panelPlayers, 1000, wxPoint(200, 250), wxSize(250, 30));
+	
 	//destroy old fields 
-	for (int i = 0; i < playerLabels.size(); i++)
+	/*for (int i = 0; i < playerLabels.size(); i++)
 	{
 		playerLabels.at(i)->Destroy();
 		nameInputFields.at(i)->Destroy();
-	}
+	}*/
 	
 
 
@@ -59,6 +64,8 @@ void NewGameWindow::setGuiPlayers(int playerNumber)
 		return;
 	}
 
+	
+
 	int yStart = 50;
 	int xStart = 20;
 
@@ -66,8 +73,8 @@ void NewGameWindow::setGuiPlayers(int playerNumber)
 
 	int offsetBetweenLines = 20;
 	
-	playerLabels.clear();
-	nameInputFields.clear();
+	//playerLabels.clear();
+	//nameInputFields.clear();
 	
 	
 	for (int i = 0; i < playerNumber; i++)

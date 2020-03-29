@@ -6,6 +6,8 @@
 #include <wx/wx.h>
 #endif
 
+#include "inputPanel.h"
+
 class NewGameWindow :
 	public wxDialog
 {
@@ -21,9 +23,9 @@ public:
 private:
 	int newNumberOfPlayers = 2;
 	
-	wxChoice* numberOfPlayers = nullptr;
-	std::vector<wxStaticText*> playerLabels;
-	std::vector<wxTextCtrl*> nameInputFields;
+	wxChoice* numberOfPlayers;					//field to select number of players
+	std::vector<wxStaticText*> playerLabels;	//the names: player 1, player 2, ....
+	std::vector<wxTextCtrl*> nameInputFields;	//the name input fields
 
 	wxPanel* panelPlayers;
 
