@@ -26,8 +26,12 @@ private:
 	wxChoice* numberOfPlayers;					//field to select number of players
 	std::vector<wxStaticText*> playerLabels;	//the names: player 1, player 2, ....
 	std::vector<wxTextCtrl*> nameInputFields;	//the name input fields
+	
+	std::vector<InputPanel*> inputPanels;		//input lines for player
+
 
 	wxPanel* panelPlayers;
+	
 
 	wxDECLARE_EVENT_TABLE();
 

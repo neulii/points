@@ -40,9 +40,6 @@ void NewGameWindow::SelectedNumberOfPlayersChoice(wxCommandEvent& event)
 }
 void NewGameWindow::setGuiPlayers(int playerNumber)
 {
-
-
-
 	panelPlayers= new wxPanel(this, wxID_ANY);
 	panelPlayers->SetSize(this->GetSize());
 
@@ -80,7 +77,7 @@ void NewGameWindow::setGuiPlayers(int playerNumber)
 	for (int i = 0; i < playerNumber; i++)
 	{
 
-		//TODO 
+		//TODO input inputlines
 
 		//generate temporary textfield
 		yLine = yStart + i * 25 + i * offsetBetweenLines;
